@@ -1,5 +1,4 @@
 const Resume = () => {
-  // Resume data containing Work Experience, Education, and Skills & Expertise
   const data = [
     {
       topic: "Work Experience",
@@ -52,21 +51,24 @@ const Resume = () => {
   return (
     <div className="font-mono">
       {/* Resume Header Section */}
-      <div className="w-4/5 mx-auto my-14  p-6 ">
-        <h1 className="font-bold text-gray-600 text-2xl mb-6">Resume</h1>
+      <div className="w-11/12 mx-auto my-8 p-6">
+        <h1 className="font-bold text-gray-600 text-2xl mb-4">Resume</h1>
 
         {/* Work Experience Section */}
-        <div className="mt-24">
+        <div className="mt-12">
           {data.map((section, index) =>
             section.topic === "Work Experience" ? (
-              <div key={index} className="flex flex-row justify-between my-8">
+              <div
+                key={index}
+                className="flex flex-col md:flex-row justify-between my-6"
+              >
                 {/* Section Title */}
                 <h1 className="text-xl text-gray-600 font-semibold">
                   {section.topic}
                 </h1>
 
                 {/* Section Content */}
-                <div className="flex flex-row gap-5 max-w-3xl text-gray-700">
+                <div className="flex flex-col md:flex-row gap-5 max-w-full md:max-w-3xl text-gray-700">
                   <div>
                     {section.company && (
                       <div>
@@ -76,7 +78,7 @@ const Resume = () => {
                       </div>
                     )}
                   </div>
-                  <div className="w-[70%]">
+                  <div className="w-full md:w-[70%]">
                     <h3 className="text-lg text-gray-600 font-bold">
                       {section.company}
                     </h3>
@@ -86,7 +88,7 @@ const Resume = () => {
                       </h4>
                     )}
                     {section.description && (
-                      <p className="text-sm text-gray-500 w-96">
+                      <p className="text-sm text-gray-500">
                         {section.description}
                       </p>
                     )}
@@ -102,31 +104,27 @@ const Resume = () => {
       <div className="w-[90%] mx-auto border-t-2 border-gray-300 my-2"></div>
 
       {/* Education Section */}
-      <div className="w-4/5 mx-auto p-6">
+      <div className="w-11/12 mx-auto p-6">
         {data.map((section, index) =>
           section.topic === "Education" ? (
             <div
               key={index}
-              className="flex text-gray-600 flex-row justify-between my-8"
+              className="flex flex-col md:flex-row justify-between my-6"
             >
               {/* Section Title */}
-              <h1 className="text-xl  font-semibold">{section.topic}</h1>
+              <h1 className="text-xl font-semibold">{section.topic}</h1>
 
               {/* Section Content */}
-              <div className="flex flex-row gap-2 max-w-3xl text-gray-700">
+              <div className="flex flex-col md:flex-row gap-2 max-w-full md:max-w-3xl text-gray-700">
                 <div>
-                  <div>
-                    <h4 className="text-lm text-gray-600">
-                      {section.duration}
-                    </h4>
-                  </div>
+                  <h4 className="text-lm text-gray-600">{section.duration}</h4>
                 </div>
-                <div className="w-[70%]">
+                <div className="w-full md:w-[70%]">
                   <h3 className="text-lg text-gray-600 font-bold">
                     {section.degree}
                   </h3>
                   {section.college && (
-                    <h4 className="text-lg text-gray-600  font-semibold">
+                    <h4 className="text-lg text-gray-600 font-semibold">
                       {section.college}
                     </h4>
                   )}
@@ -146,18 +144,18 @@ const Resume = () => {
       <div className="w-[90%] mx-auto border-t-2 border-gray-300 my-2"></div>
 
       {/* Skills & Expertise Section */}
-      <div className="w-4/5 text-gray-600 mx-auto p-6">
+      <div className="w-11/12 text-gray-600 mx-auto p-6">
         {data.map((section, index) =>
           section.topic === "Skills & Expertise" ? (
             <div
               key={index}
-              className="flex flex-row justify-between my-8 gap-96"
+              className="flex flex-col md:flex-row justify-between my-6 gap-5"
             >
               {/* Section Title */}
-              <h1 className="text-xl  font-semibold">{section.topic}</h1>
+              <h1 className="text-xl font-semibold">{section.topic}</h1>
 
               {/* Section Content */}
-              <div className="w-4/5 max-w-3xl p-6">
+              <div className="w-full md:w-4/5 max-w-3xl p-6">
                 <div className="text-gray-700">
                   {/* Front-End Skills */}
                   <div className="mb-4">
@@ -167,7 +165,7 @@ const Resume = () => {
 
                   {/* Back-End Skills */}
                   <div className="mb-4">
-                    <h3 className="font-bold  text-lg">Back-End:</h3>
+                    <h3 className="font-bold text-lg">Back-End:</h3>
                     <p className="text-sm">{section.backEnd.join("")}</p>
                   </div>
 

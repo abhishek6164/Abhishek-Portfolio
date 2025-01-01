@@ -74,26 +74,26 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-4/5 mx-auto font-mono flex flex-row justify-between my-10 p-6">
-      <div>
-        <h1 className="text-4xl font-semibold">Contact</h1>
-        <p className="w-80 mt-5">
-          Let’s make something amazing together. Drop me a message!
-        </p>
-        <h1 className="text-xl font-semibold mt-5">Phone</h1>
-        <a className="w-80 mt-2" href="tel:+91 9322876164">
-          +91 9322876164
-        </a>
-        <h1 className="text-xl font-semibold mt-5">Email</h1>
-        <a className="w-80 mt-2" href="mailto:abhishekpipriye2507@gmail.com">
-          abhishekpipriye2507@gmail.com
-        </a>
-      </div>
-      <div className="mr-32">
-        <form onSubmit={submitForm}>
-          <div className="flex flex-col text-gray-700">
-            <div className="flex gap-5 mb-4">
-              <div>
+    <>
+      <div className="w-4/5 mx-auto font-mono my-10 p-6 flex flex-row justify-center items-center h-screen gap-5 md-mx:flex-col md-mx:gap-4 md-mx:mt-56 md-mx:mb-72 xs-mx:flex-col xs-mx:items-center xs-mx:text-center">
+        <div className="w-full">
+          <h1 className="text-4xl font-semibold">Contact</h1>
+          <p className="w-80 mt-5 md-mx:mx-auto">
+            Let’s make something amazing together. Drop me a message!
+          </p>
+          <h1 className="text-xl font-semibold mt-5">Phone</h1>
+          <a className="block mt-2" href="tel:+91 9322876164">
+            +91 9322876164
+          </a>
+          <h1 className="text-xl font-semibold mt-5">Email</h1>
+          <a className="block mt-2" href="mailto:abhishekpipriye2507@gmail.com">
+            abhishekpipriye2507@gmail.com
+          </a>
+        </div>
+        <div className="w-full">
+          <form onSubmit={submitForm} className="w-full flex flex-col gap-4">
+            <div className="flex gap-5 md-mx:flex-col">
+              <div className="w-full">
                 <label className="text-gray-600">
                   First Name*
                   <input
@@ -108,7 +108,7 @@ const Contact = () => {
                   )}
                 </label>
               </div>
-              <div>
+              <div className="w-full">
                 <label className="text-gray-600">
                   Last Name*
                   <input
@@ -124,8 +124,8 @@ const Contact = () => {
                 </label>
               </div>
             </div>
-            <div className="flex gap-5 mb-4">
-              <div>
+            <div className="flex gap-5 md-mx:flex-col">
+              <div className="w-full">
                 <label className="text-gray-600">
                   Email*
                   <input
@@ -140,7 +140,7 @@ const Contact = () => {
                   )}
                 </label>
               </div>
-              <div>
+              <div className="w-full">
                 <label className="text-gray-600">
                   Subject*
                   <input
@@ -177,10 +177,12 @@ const Contact = () => {
             >
               Submit
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
+      {/* Horizontal Line for Section Break */}
+      <div className="w-[90%] mx-auto my-8 mt-36 border-t-2 border-x-gray-500"></div>
+    </>
   );
 };
 

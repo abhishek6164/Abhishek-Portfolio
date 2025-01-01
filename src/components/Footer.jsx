@@ -4,21 +4,31 @@ import { IconBrandTwitter } from "@tabler/icons-react";
 
 const Footer = () => {
   return (
-    <> 
-      <div className="mt-14 ml-16   font-mono  flex flex-row gap-48 mb-32">
-        <div>
-          <h1 className="font-bold text-xl">Phone</h1>
-          <a href="tel:+91-9322876164">+91-9322876164</a>
+    <>
+      <div className="mt-14 flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16 lg:gap-48 xl:gap-48 font-mono mb-8 sm-mx:mt-10 xs-mx:mt-0">
+        {/* Phone Section */}
+        <div className="text-center sm:text-left">
+          <h1 className="font-bold text-xl md:text-sm lg:text-lg">Phone</h1>
+          <a className="text-gray-500" href="tel:+91-9322876164">
+            +91-9322876164
+          </a>
         </div>
-        <div>
-          <h1 className="font-bold text-xl">Email</h1>
-          <a href="mailto:abhishekpipriye2507@gmail.com">
+
+        {/* Email Section */}
+        <div className="text-center sm:text-left">
+          <h1 className="font-bold text-xl md:text-sm lg:text-lg">Email</h1>
+          <a
+            className="text-gray-500"
+            href="mailto:abhishekpipriye2507@gmail.com"
+          >
             abhishekpipriye2507@gmail.com
           </a>
         </div>
-        <div>
-          <h1 className="font-bold text-xl">Follow Me</h1>
-          <div className="flex flex-row gap-4">
+
+        {/* Follow Me Section */}
+        <div className="text-center sm:text-left">
+          <h1 className="font-bold text-xl md:text-sm lg:text-lg">Follow Me</h1>
+          <div className="flex justify-center sm:justify-start gap-4 text-gray-500">
             <a
               href="https://leetcode.com/u/Abhishek_Pipriye/"
               target="_blank"
@@ -42,9 +52,11 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div>
-          <h1 className="text-sm">© 2025 By Abhishek Pipriye.</h1>
-        </div>
+      </div>
+
+      {/* Footer Bottom Section */}
+      <div className="text-center">
+        <h1 className="text-sm">© 2025 By Abhishek Pipriye.</h1>
       </div>
     </>
   );

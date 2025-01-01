@@ -34,8 +34,8 @@ const Projects = () => {
   return (
     <div className="font-mono">
       {/* Projects Header */}
-      <div className="w-4/5 mx-auto my-14  p-6">
-        <h1 className="font-bold text-gray-600 text-4xl mb-6">Projects</h1>
+      <div className="w-4/5 mx-auto my-8  p-6">
+        <h1 className="font-bold text-gray-600 text-4xl ">Projects</h1>
 
         {/* Projects Section */}
         <div className="mt-10">

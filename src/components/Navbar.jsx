@@ -8,7 +8,7 @@ const pages = ["Abhishek"];
 function ResponsiveAppBar() {
   return (
     <AppBar
-      className="!bg-transparent font-mono overflow-auto scrollbar-hide  !shadow-none text-3xl font-bold !text-black  sm:text-2xl sm:font-semibold sm:items-center sm:justify-between sm:flex sm:px-4 sm:py-2"
+      className="!bg-transparent font-mono overflow-auto scrollbar-hide  !shadow-none text-3xl font-bold !text-black"
       position="static"
     >
       <Container maxWidth="xl">
@@ -17,7 +17,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1 }}>
             {pages.map((page) => (
               <span key={page} className="flex   items-center space-x-2">
-                <span className="w-5 h-5 bg-red-500 rounded-full :hidden"></span>{" "}
+                <span className="w-5 h-5 bg-red-500 rounded-full "></span>{" "}
                 {/* Red Dot */}
                 <span className="cursor-pointer ">{page}</span>
               </span>
