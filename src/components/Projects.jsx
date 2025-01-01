@@ -1,32 +1,32 @@
-import ECommerceImage from "../../public/images/ECommerce.jpg";
-import VedicHeritageImage from "../../public/images/Vedas.jpg";
-import WeatherImage from "../../public/images/Weather.png";
-import EMSImage from "../../public/images/EMS.png";
+// import ECommerceImage from "../../public/images/ECommerce.jpg";
+// import VedicHeritageImage from "../../public/images/Vedas.jpg";
+// import WeatherImage from "../../public/images/Weather.png";
+// import EMSImage from "../../public/images/EMS.png";
 const Projects = () => {
   // Project Data
   const data = [
     {
-      Bio: "The Employee Management System is a dynamic web application designed to streamline employee task distribution and management within an organization. Built using React.js and styled with Tailwind CSS, the application offers a seamless and intuitive interface for both administrators and employees. Leveraging the browser's local storage for data management, the system eliminates the need for a backend, making it lightweight and easy to deploy.",
+      Bio: "The Employee Management System is a dynamic web application designed to streamline employee task distribution and management within an organization...",
       topic: "Employee Management System",
-      image: EMSImage,
+      image: "/images/EMS.png", // Updated path
       github: "https://github.com/abhishek6164/employee-task-distribution",
     },
     {
-      Bio: "A responsive and user-friendly e-commerce platform built with React.js and Tailwind CSS. Features include a dynamic product catalog, search and filter options, cart management, and a seamless checkout process. Integrated APIs for product data and optimized for all devices.Technologies Used: React.js, Tailwind CSS, Axios",
+      Bio: "A responsive and user-friendly e-commerce platform built with React.js and Tailwind CSS...",
       topic: "E-Commerce Platform",
-      image: ECommerceImage,
+      image: "/images/ECommerce.jpg", // Updated path
       github: "https://github.com/abhishek6164/next-inline",
     },
     {
-      Bio: "A web application dedicated to exploring and preserving the ancient heritage of Vedic culture. The platform includes:Interactive Content: Showcases key aspects of the Vedas, such as hymns, rituals, and philosophical teachings.User-Friendly Design: Provides a clean and intuitive interface for easy navigation.Informational Sections: Covers history, significance, and interpretations of the Vedas to educate and inspire users.Key Features: Engaging design for better storytelling. Mobile-friendly and responsive layout. Technologies Used: React.js, Tailwind CSS",
+      Bio: "A web application dedicated to exploring and preserving the ancient heritage of Vedic culture...",
       topic: "Vedic Heritage Platform",
-      image: VedicHeritageImage,
+      image: "/images/Vedas.jpg", // Updated path
       github: "https://github.com/abhishek6164/",
     },
     {
-      Bio: "A real-time weather forecasting application offering detailed updates on weather conditions. The app includes: Live Weather Updates: Fetches accurate weather data using a weather API.Location-Based Forecasts: Displays current weather, temperature, humidity, and wind speed for user-specific locations.Responsive Design: Ensures compatibility across all devices. Key Features: Search functionality for cities worldwide.Hourly and weekly weather forecasts. Clean, minimalist interface for quick insights. Technologies Used: React.js, REST APIs, Tailwind CSS",
+      Bio: "A real-time weather forecasting application offering detailed updates on weather conditions...",
       topic: "Weather Forecasting App",
-      image: WeatherImage,
+      image: "/images/Weather.png", // Updated path
       github: "https://github.com/abhishek6164/weather-app",
     },
   ];
