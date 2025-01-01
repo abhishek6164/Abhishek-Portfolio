@@ -1,7 +1,7 @@
-import ECommerceImage from "../../public/ECommerce.jpg";
-import VedicHeritageImage from "../../public/Vedas.jpg";
-import WeatherImage from "../../public/Weather.png";
-import EMSImage from "../../public/EMS.png";
+import ECommerceImage from "../../public/images/ECommerce.jpg";
+import VedicHeritageImage from "../../public/images/Vedas.jpg";
+import WeatherImage from "../../public/images/Weather.png";
+import EMSImage from "../../public/images/EMS.png";
 const Projects = () => {
   // Project Data
   const data = [

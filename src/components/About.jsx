@@ -7,7 +7,7 @@ const About = () => {
 
   // Function to open the resume in a new tab
   const showResume = () => {
-    window.open("./public/Abhishek_pipriye.pdf", "_blank");
+    window.open("./public/images/Abhishek_pipriye.pdf", "_blank");
   };
 
   return (
@@ -24,7 +24,7 @@ const About = () => {
             className={`w-[480px] h-[480px] object-cover rounded-full transition-all duration-500 xl-mx:ml-20 lg-mx:w-[340px] lg-mx:h-[340px] lg-mx:ml-6 bs-mx:ml-5 bs-mx:w-[300px] bs-mx:h-[300px] xsm-mx:mt-0 ${
               isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
-            src="./public/Person.jpg"
+            src="./public/images/Person.jpg"
             alt="Abhishek"
             loading="lazy"
             onLoad={() => setIsLoaded(true)} // Set isLoaded to true when the image is loaded
