@@ -43,7 +43,7 @@ const About = () => {
             }`}
           >
             {/* Greeting and About Me */}
-            <h1 className="text-4xl lg-mx:text-2xl bs-mx:text-2xl font-bold mb-2 font-mono sm-mx:text-center sm-mx:text-4xl">
+            <h1 className="!text-4xl lg-mx:text-2xl bs-mx:text-2xl font-bold mb-2 font-mono sm-mx:text-center sm-mx:text-3xl">
               Hello
             </h1>
             <h2 className="text-2xl lg-mx:text-xl font-bold font-mono mb-1 sm-mx:text-center sm-mx:text-2xl">
