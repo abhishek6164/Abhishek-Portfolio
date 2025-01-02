@@ -1,7 +1,3 @@
-// import ECommerceImage from "../../public/images/ECommerce.jpg";
-// import VedicHeritageImage from "../../public/images/Vedas.jpg";
-// import WeatherImage from "../../public/images/Weather.png";
-// import EMSImage from "../../public/images/EMS.png";
 const Projects = () => {
   // Project Data
   const data = [
@@ -21,7 +17,7 @@ const Projects = () => {
       Bio: "A web application dedicated to exploring and preserving the ancient heritage of Vedic culture...",
       topic: "Vedic Heritage Platform",
       image: "/images/Vedas.jpg", // Updated path
-      github: "https://github.com/abhishek6164/Vedic-Wisdom-Website",
+      github: "https://github.com/abhishek6164/",
     },
     {
       Bio: "A real-time weather forecasting application offering detailed updates on weather conditions...",

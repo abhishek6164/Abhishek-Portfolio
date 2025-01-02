@@ -16,7 +16,7 @@ const About = () => {
       {/* Main Section: Wrapper for content */}
       <div
         className={`flex flex-row justify-center items-center h-screen gap-5 bs-mx:gap-1 transition-opacity duration-500 sm-mx:flex sm-mx:flex-col sm-mx:mt-36 sm-mx:justify-center sm-mx:items-center  xsm-mx:  ${
-          isLoaded ? "opacity-100" : "opacity-0"
+          isLoaded ? "opacity-1" : "opacity-0"
         }`}
       >
         {/* Image Section */}
@@ -43,7 +43,7 @@ const About = () => {
             }`}
           >
             {/* Greeting and About Me */}
-            <h1 className="!text-4xl lg-mx:text-2xl bs-mx:text-2xl font-bold mb-2 font-mono sm-mx:text-center sm-mx:text-3xl">
+            <h1 className="text-4xl lg-mx:text-2xl bs-mx:text-2xl font-bold mb-2 font-mono sm-mx:text-center sm-mx:text-4xl">
               Hello
             </h1>
             <h2 className="text-2xl lg-mx:text-xl font-bold font-mono mb-1 sm-mx:text-center sm-mx:text-2xl">
