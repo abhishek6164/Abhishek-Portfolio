@@ -21,7 +21,7 @@ const Projects = () => {
       Bio: "A web application dedicated to exploring and preserving the ancient heritage of Vedic culture...",
       topic: "Vedic Heritage Platform",
       image: "/images/Vedas.jpg", // Updated path
-      github: "https://github.com/abhishek6164/",
+      github: "https://github.com/abhishek6164/Vedic-Wisdom-Website",
     },
     {
       Bio: "A real-time weather forecasting application offering detailed updates on weather conditions...",
