@@ -23,7 +23,7 @@ const Projects = () => {
       Bio: "A real-time weather forecasting application offering detailed updates on weather conditions...",
       topic: "Weather Forecasting App",
       image: "/images/Weather.png", // Updated path
-      github: "https://github.com/abhishek6164/weather-app",
+      github: "https://github.com/abhishek6164/WeatherApi",
     },
   ];
 
