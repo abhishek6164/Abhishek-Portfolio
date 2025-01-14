@@ -8,7 +8,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
+    email: "", 
     subject: "",
     message: "",
   });
@@ -26,17 +26,17 @@ const Contact = () => {
   const validateForm = () => {
     let formErrors = {};
     if (!formData.firstName.trim())
-      formErrors.firstName = "First name is required.";
-    if (!formData.lastName.trim())
-      formErrors.lastName = "Last name is required.";
+      formErrors.firstName = "Please enter your first name";
+    if (!formData.lastName.trim()) 
+      formErrors.lastName = "Please enter your last name";
     if (!formData.email.trim()) {
-      formErrors.email = "Email is required.";
+      formErrors.email = "Please provide your email";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      formErrors.email = "Invalid email address.";
+      formErrors.email = "Please enter a valid email address";
     }
-    if (!formData.subject.trim()) formErrors.subject = "Subject is required.";
+    if (!formData.subject.trim()) formErrors.subject = "Please add a subject";
     if (!formData.message.trim())
-      formErrors.message = "Message cannot be empty.";
+      formErrors.message = "Please write your message";
 
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0;
@@ -56,7 +56,7 @@ const Contact = () => {
           subject: formData.subject,
           message: formData.message,
         });
-        console.log("Data saved successfully");
+        alert("Message sent successfully!");
         // Reset the form after successful submission
         setFormData({
           firstName: "",
@@ -66,122 +66,160 @@ const Contact = () => {
           message: "",
         });
       } catch (error) {
-        console.error("Error saving data to Firebase:", error);
+        alert("Error sending message. Please try again.");
       }
     } else {
-      console.log("Validation errors:", errors);
+      console.log("Please fix the validation errors");
     }
   };
 
   return (
     <>
-      <div className="w-4/5 mx-auto font-mono my-10 p-6 flex flex-row justify-center items-center h-screen gap-5 md-mx:flex-col md-mx:gap-4 md-mx:mt-56 md-mx:mb-72 xs-mx:flex-col xs-mx:items-center xs-mx:text-center">
-        <div className="w-full">
-          <h1 className="text-4xl font-semibold">Contact</h1>
-          <p className="w-80 mt-5 md-mx:mx-auto">
-            Let’s make something amazing together. Drop me a message!
-          </p>
-          <h1 className="text-xl font-semibold mt-5">Phone</h1>
-          <a className="block mt-2" href="tel:+91 9322876164">
-            +91 9322876164
-          </a>
-          <h1 className="text-xl font-semibold mt-5">Email</h1>
-          <a className="block mt-2" href="mailto:abhishekpipriye2507@gmail.com">
-            abhishekpipriye2507@gmail.com
-          </a>
-        </div>
-        <div className="w-full">
-          <form onSubmit={submitForm} className="w-full flex flex-col gap-4">
-            <div className="flex gap-5 md-mx:flex-col">
-              <div className="w-full">
-                <label className="text-gray-600">
-                  First Name*
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    className="border mt-2 h-10 pl-2 text-lm outline-none border-black w-full"
-                  />
-                  {errors.firstName && (
-                    <p className="text-red-500 text-sm">{errors.firstName}</p>
-                  )}
-                </label>
+      <div className="w-11/12 max-w-7xl mx-auto font-serif py-16 px-4 sm:px-6 lg:px-8 scroll-mt-16 bg-[#F5F5F5]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Contact Info Section */}
+          <div className="space-y-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#3E362E]">
+              Get in Touch
+            </h1>
+            <p className="text-lg sm:text-xl max-w-md italic text-[#865D36]">
+              Have a project in mind? I&apos;d love to hear about it. Let&apos;s
+              discuss how we can work together.
+            </p>
+            <div className="space-y-4">
+              <div>
+                <h2 className="text-2xl font-bold text-[#93785B]">
+                  Call Me At
+                </h2>
+                <a
+                  className="block mt-2 text-lg hover:text-[#AC8968] transition-colors font-medium"
+                  href="tel:+91 9322876164"
+                >
+                  +91 9322876164
+                </a>
               </div>
-              <div className="w-full">
-                <label className="text-gray-600">
-                  Last Name*
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className="border mt-2 h-10 pl-2 text-lm outline-none border-black w-full"
-                  />
-                  {errors.lastName && (
-                    <p className="text-red-500 text-sm">{errors.lastName}</p>
-                  )}
-                </label>
+              <div>
+                <h2 className="text-2xl font-bold text-[#93785B]">
+                  Send an Email
+                </h2>
+                <a
+                  className="block mt-2 text-lg hover:text-[#AC8968] transition-colors font-medium"
+                  href="mailto:abhishekpipriye2507@gmail.com"
+                >
+                  abhishekpipriye2507@gmail.com
+                </a>
               </div>
             </div>
-            <div className="flex gap-5 md-mx:flex-col">
-              <div className="w-full">
-                <label className="text-gray-600">
-                  Email*
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+          </div>
+
+          {/* Form Section */}
+          <div className="bg-[#F5F5F5] rounded-lg shadow-md p-6">
+            <form onSubmit={submitForm} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block  text-[#A69080] font-semibold">
+                    First Name*
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full  rounded-md border-gray-300 shadow-sm focus:border-[#93785B] focus:ring focus:ring-[#AC8968] focus:ring-opacity-50 h-10 px-3"
+                    />
+                    {errors.firstName && (
+                      <p className="mt-1 text-red-500 text-sm font-medium">
+                        {errors.firstName}
+                      </p>
+                    )}
+                  </label>
+                </div>
+                <div>
+                  <label className="block text-[#A69080] font-semibold">
+                    Last Name*
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#93785B] focus:ring focus:ring-[#AC8968] focus:ring-opacity-50 h-10 px-3"
+                    />
+                    {errors.lastName && (
+                      <p className="mt-1 text-red-500 text-sm font-medium">
+                        {errors.lastName}
+                      </p>
+                    )}
+                  </label>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[#A69080] font-semibold">
+                    Email Address*
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#93785B] focus:ring focus:ring-[#AC8968] focus:ring-opacity-50 h-10 px-3"
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-red-500 text-sm font-medium">
+                        {errors.email}
+                      </p>
+                    )}
+                  </label>
+                </div>
+                <div>
+                  <label className="block text-[#A69080] font-semibold">
+                    Subject Line*
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#93785B] focus:ring focus:ring-[#AC8968] focus:ring-opacity-50 h-10 px-3"
+                    />
+                    {errors.subject && (
+                      <p className="mt-1 text-red-500 text-sm font-medium">
+                        {errors.subject}
+                      </p>
+                    )}
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[#A69080] font-semibold">
+                  Your Message
+                  <textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleInputChange}
-                    className="border mt-2 h-10 pl-2 text-lm outline-none border-black w-full"
+                    className="mt-1 block w-full rounded-md border-black shadow-sm focus:ring focus:ring-[#AC8968] focus:ring-opacity-50 h-32 px-3 py-2 resize-none"
+                    placeholder="Share your thoughts or project details..."
                   />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm">{errors.email}</p>
+                  {errors.message && (
+                    <p className="mt-1 text-red-500 text-sm font-medium">
+                      {errors.message}
+                    </p>
                   )}
                 </label>
               </div>
-              <div className="w-full">
-                <label className="text-gray-600">
-                  Subject*
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="border mt-2 h-10 pl-2 text-lm outline-none border-black w-full"
-                  />
-                  {errors.subject && (
-                    <p className="text-red-500 text-sm">{errors.subject}</p>
-                  )}
-                </label>
-              </div>
-            </div>
-            <div>
-              <label className="text-gray-600">
-                Message
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="border mt-2 w-full h-24 pl-2 text-lm outline-none border-black resize-none"
-                  placeholder="Write your message here..."
-                />
-                {errors.message && (
-                  <p className="text-red-500 text-sm">{errors.message}</p>
-                )}
-              </label>
-            </div>
-            <button
-              type="submit"
-              className="bg-yellow-500 mt-4 w-full h-12 text-2xl font-bold rounded-3xl"
-            >
-              Submit
-            </button>
-          </form>
+
+              <button
+                type="submit"
+                className="w-full bg-[#93785B] text-white py-3 px-6 rounded-full text-xl font-bold hover:bg-[#865D36] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#AC8968] focus:ring-opacity-50"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
+
       {/* Horizontal Line for Section Break */}
-      <div className="w-[90%] mx-auto my-8 mt-36 border-t-2 border-x-gray-500"></div>
+      <div className="w-11/12 max-w-7xl mx-auto border-t-2 border-[#93785B]"></div>
     </>
   );
 };

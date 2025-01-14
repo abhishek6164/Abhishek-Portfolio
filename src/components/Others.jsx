@@ -1,36 +1,59 @@
 const Others = () => {
   const items = [
     {
-      name: "Resume",
-      color: "bg-yellow-300",
-      link: "/resume", // Resume link
+      name: "View My CV",
+      color: "bg-gradient-to-br from-[#AC8968] to-[#93785B]",
+      link: "/resume",
     },
     {
-      name: "Projects",
-      color: "bg-red-300",
-      link: "/projects", // Projects link
+      name: "My Work",
+      color: "bg-gradient-to-br from-[#AC8968] to-[#93785B]",
+      link: "/projects",
     },
     {
-      name: "Contact",
-      color: "bg-blue-300",
-      link: "/contact", // Contact link
+      name: "Let's Talk",
+      color: "bg-gradient-to-br from-[#AC8968] to-[#93785B]",
+      link: "/contact",
     },
   ];
 
+  // Extract common classes to avoid repetition
+  const containerClasses = `
+    mt-6 
+    flex flex-col gap-5
+    items-center justify-center
+    sm:flex-row sm:gap-8
+    md:gap-10
+    lg:gap-12
+  `;
+
+  const itemClasses = "flex justify-center items-center";
+
+  const spanBaseClasses = `
+    flex justify-center items-center
+    text-[#3E362E] font-bold
+    w-28 h-28
+    sm:w-32 sm:h-32
+    md:w-36 md:h-36
+    lg:w-40 lg:h-40
+    text-sm uppercase tracking-wider
+    sm:text-base
+    md:text-lg
+    rounded-full
+    border-2 border-[#3E362E]/20
+    shadow-lg hover:shadow-xl
+    transition-all duration-300
+    hover:bg-[#F5F5F5] hover:text-[#3E362E]
+    transform hover:scale-105
+    font-sans
+  `;
+
   return (
-    <div className="">
-      <div className="mt-6 gap-5  flex justify-center items-center lg-mx:mr-28 lg-mx:flex-row sm-mx:items-center sm-mx:justify-center sm-mx:ml-24 sm-mx:mb-20  xs-mx:mb-3  xsm-mx:mb-0">
-        {items.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            className="flex justify-center items-center"
-          >
-            <span
-              className={`flex justify-center items-center ${item.color} hover:bg-white hover:text-black text-white text-xl font-semibold w-40 h-40 rounded-full border border-gray shadow-lg hover:shadow-xl transition-colors duration-300  lg-mx:text-sm lg-mx:w-24 lg-mx:h-24 lg-mx:rounded-full  `}
-            >
-              {item.name}
-            </span>
+    <div className="w-full px-4">
+      <div className={containerClasses}>
+        {items.map(({ name, color, link }, index) => (
+          <a key={name} href={link} className={itemClasses}>
+            <span className={`${spanBaseClasses} ${color}`}>{name}</span>
           </a>
         ))}
       </div>

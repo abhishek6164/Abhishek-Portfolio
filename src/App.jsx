@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Resume from "./components/Resume";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact"; 
+import Resume from "./components/Resume";
 
 function App() {
   return (

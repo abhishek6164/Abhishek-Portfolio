@@ -2,91 +2,102 @@ import { useState } from "react";
 import Others from "./Others";
 
 const About = () => {
-  // State to manage the loading effect
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Function to open the resume in a new tab
   const showResume = () => {
-    window.open("/images/Abhishek_pipriye.pdf", "_blank"); // Updated path
+    window.open("./public/images/Abhishek_pipriye.pdf", "_blank");
   };
 
+  // Responsive class names with mobile-first approach
+  const mainSectionClasses = `
+    min-h-screen w-full 
+    flex flex-col items-center justify-center
+    md:flex-row md:gap-8 lg:gap-12
+    ${isLoaded ? "opacity-100" : "opacity-0"}
+    transition-opacity duration-500
+    scroll-smooth
+    bg-[#F5F5F5]
+  `;
+
+  const imageClasses = `
+    w-64 h-64 
+    sm:w-72 sm:h-72
+    md:w-80 md:h-80 
+    lg:w-96 lg:h-96
+    rounded-full object-cover
+    mb-8 md:mb-0
+    ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"}
+    transition-all duration-500
+    shadow-[0_0_30px_rgba(172,137,104,0.3)]
+    hover:shadow-[0_0_40px_rgba(172,137,104,0.5)]
+  `;
+
+  const contentSectionClasses = `
+    w-full max-w-xl
+    px-4 mt-10
+    md:px-8
+    flex flex-col gap-4
+    ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
+    transition-all duration-1000
+  `;
 
   return (
-    <div className="overflow-auto scrollbar-hide  xsm-mx:overflow-auto xsm-mx:scrollbar-hide ">
-      {/* Main Section: Wrapper for content */}
-      <div
-        className={`flex flex-row justify-center items-center h-screen gap-5 bs-mx:gap-1 transition-opacity duration-500 sm-mx:flex sm-mx:flex-col sm-mx:mt-36 sm-mx:justify-center sm-mx:items-center  xsm-mx:  ${
-          isLoaded ? "opacity-1" : "opacity-0"
-        }`}
-      >
-        {/* Image Section */}
-        <div>
+    <div className="w-full overflow-x-hidden scroll-smooth">
+      <div className={mainSectionClasses}>
+        <div className="flex justify-center">
           <img
-            className={`w-[480px] h-[480px] object-cover rounded-full transition-all duration-500 xl-mx:ml-20 lg-mx:w-[340px] lg-mx:h-[340px] lg-mx:ml-6 bs-mx:ml-5 bs-mx:w-[300px] bs-mx:h-[300px] xsm-mx:mt-0 ${
-              isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
-            src="/images/Person.jpg" // Updated path
+            className={imageClasses}
+            src="/images/Person.jpg"
             alt="Abhishek"
-            loading="lazy"
             onLoad={() => setIsLoaded(true)}
           />
         </div>
 
-        {/* About Text Section */}
-        <div
-          className={`flex flex-col mt-28 sm-mx:mt-10  ml-8 sm-mx:justify-center sm-mx:items-center gap-5  `}
-        >
-          {/* Introduction Section */}
-          <div
-            className={`transform transition-all duration-1000   ${
-              isLoaded ? "translate-y-0 opacity-1" : "translate-y-10 opacity-0"
-            }`}
-          >
-            {/* Greeting and About Me */}
-            <h1 className="text-4xl lg-mx:text-2xl bs-mx:text-2xl font-bold mb-2 font-mono sm-mx:text-center sm-mx:text-4xl">
-              Hello
-            </h1>
-            <h2 className="text-2xl lg-mx:text-xl font-bold font-mono mb-1 sm-mx:text-center sm-mx:text-2xl">
-              A Bit About Me
-            </h2>
-            <p className="text-gray-700 lg-mx:text-sm bs-mx:mr-5 xs-mx:w-80   font-mono leading-relaxed max-w-md">
-              <span className="font-semibold32 sm-mx:ml-10 sm-mx:text-3xl lg-mx:text-xl text-xl xs-mx:text-lg xs-ms sm-mx:text-center sm-mx:justify-center">
-                I’m Abhishek Pipariye,
-              </span>
-              <br />A web developer transitioning from a strong background in
-              system administration. With hands-on experience at Wipro managing
-              IT infrastructures, I’ve developed a passion for building and
-              functional, responsive websites. Skilled in HTML, CSS, JavaScript,
-              and Node.js, I bring a unique perspective by combining my
-              technical expertise in backend systems with front-end development.
-              I’m excited to create user-friendly web applications and explore
-              new web technologies.
+        <div className={contentSectionClasses}>
+          <h1 className="text-4xl sm:text-5xl font-black font-sans text-center md:text-left text-[#3E362E] tracking-tight">
+            Welcome!
+          </h1>
+
+          <h2 className="text-2xl sm:text-3xl font-semibold font-sans text-center md:text-left text-[#865D36]">
+            Let Me Introduce Myself
+          </h2>
+
+          <div className="text-[#3E362E] space-y-4">
+            <p className="text-xl sm:text-2xl font-sans font-bold text-[#93785B]">
+              Hey there, I&apos;m Abhishek Pipariye
             </p>
 
-            {/* Resume Link */}
-            <h2
-              className=" sm-mx:text-center font-mono font-semibold lg-mx:text-sm
-            "
-            >
-              Click here to see my{" "}
+            <p className="text-base font-sans sm:text-lg leading-relaxed tracking-normal text-[#AC8968]">
+              I&apos;m a passionate web developer with a unique journey -
+              transitioning from the world of system administration to creative
+              web development. During my time at Wipro, I mastered IT
+              infrastructure management, which gave me a solid foundation in
+              technical problem-solving. Now, I channel that expertise into
+              crafting beautiful, functional websites. My toolkit includes HTML,
+              CSS, JavaScript, and Node.js, allowing me to build both stunning
+              frontends and robust backends. I love combining my system
+              administration background with modern web development to create
+              seamless, efficient applications.
+            </p>
+
+            <div className="text-center md:text-left font-sans">
+              <span className="text-lg font-medium text-[#A69080]">
+                Interested in my work? Check out my{" "}
+              </span>
               <button
-                className="font-bold font-mono text-red-500 lg-mx:text-sm"
+                className="font-bold text-lg text-[#93785B] hover:text-[#865D36] transition-colors underline decoration-2"
                 onClick={showResume}
               >
                 Resume
               </button>
-            </h2>
+            </div>
           </div>
 
-          {/* Others Component Section */}
-          <div>
-            <Others />
-          </div>
+          <Others />
         </div>
       </div>
 
-      {/* Horizontal Line for Section Break */}
-      <div className="w-[90%] mx-auto my-8 mt-36 border-t-2 border-x-gray-500"></div>
+      <div className="w-[90%] mx-auto my-8 border-t-2 border-[#93785B]"></div>
     </div>
   );
 };
